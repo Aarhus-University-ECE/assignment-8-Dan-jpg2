@@ -21,23 +21,23 @@ void enqueue(queue *q, int x)
 {
   // Add your enqueue function
   qnode *new = malloc(sizeof(qnode)); //Creating new node 
-  if(q -> rear == NULL)
+  if(q -> rear == NULL) //if the end of node is undefined size
   {
-    q -> rear = new; //new node is q's last node
+    q -> rear = new; //new node points to  last node
     q -> rear -> data = x; //add data to new node 
     q -> size++;
   }
-  else if(q -> front == NULL)
+  else if(q -> front == NULL) //if front is some undefined size 
   {
-    q -> front = new;
+    q -> front = new; //new node becomes q's first node.
     q -> front -> data = x; //add data to new node
-    q -> rear -> next = q -> front; 
+    q -> rear -> next = q -> front;  //makes the front and last node the same 
     q -> size++;
   }
   else
   {
-    q -> front -> next = new; 
-    q -> front = new;
+    q -> front -> next = new; //New next front node
+    q -> front = new; //new front node
     q -> front -> data = x; //add data to new node
     q -> size++;
   }

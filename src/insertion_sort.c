@@ -18,13 +18,13 @@ void sort(linked_list *llPtr)
             pointer -> next = pointer -> next -> next;
             while(temporary_pointer != pointer -> next) //
             {
-                if(temporary -> data <= temporary_pointer -> data)
+                if(temporary -> data <= temporary_pointer -> data) //If current data is less than what we want to move then stop
                 {
                     temporary -> next = temporary_pointer;
                     llPtr -> head = temporary;
                     break;
                 }
-                else if ((temporary -> data) <= (temporary_pointer -> next -> data))
+                else if ((temporary -> data) <= (temporary_pointer -> next -> data)) //If current data is less than the next data we want to move stop
                 {
                     temporary -> next = temporary_pointer -> next;
                     temporary_pointer -> next = temporary;
@@ -35,6 +35,6 @@ void sort(linked_list *llPtr)
             temporary_pointer = llPtr -> head;
         }
         else 
-            pointer = pointer -> next; 
+            pointer = pointer -> next; //If next node is larger than the current. 
     }
 }

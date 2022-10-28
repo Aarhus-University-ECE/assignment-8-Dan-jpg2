@@ -7,7 +7,7 @@ extern "C"{
 }
 
 // File for sandboxing and trying out code
-int main(int argc, char **argv)
+/*int main(int argc, char **argv)
 {
 
     int testlist[] ={4,3,10,1,6};
@@ -40,7 +40,42 @@ int main(int argc, char **argv)
     printf("%d\n", dequeue(&q));
     printf("%d\n", dequeue(&q));
     printf("%d", empty(&q));*/
-    return 0;
+    //return 0;
 
-}
+int main(int argc, char **argv)
+{
+
+    linked_list* list = createLinkedList();
+    node_t* addThis = createNode(5);
+    insertFront(addThis, list);
+    addThis = createNode(7);
+    insertFront(addThis, list);
+    addThis = createNode(9);
+    insertFront(addThis, list);
+    addThis = createNode(15);
+    insertFront(addThis, list);
+    addThis = createNode(66);
+    insertFront(addThis, list);
+    addThis = createNode(0);
+    insertFront(addThis, list);
+    addThis = createNode(-3);
+    insertFront(addThis, list);
+    addThis = createNode(14);
+    insertFront(addThis, list);
+    addThis = createNode(2);
+    insertFront(addThis, list);
+    addThis = createNode(27);
+    insertFront(addThis, list);
+
+    
+    //printLL(list);
+    sort(list);
+    //list->head = swap(list->head, list->head->next);
+    //printLL(list);
+
+
+
+    // printf("Is  empty after creation: %d", isempty(list));
+
+    return 0;
 }
